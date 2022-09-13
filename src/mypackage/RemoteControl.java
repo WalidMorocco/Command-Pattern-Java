@@ -3,16 +3,19 @@ package mypackage;
 public class RemoteControl {
 	Command[] onCommands;
 	Command[] offCommands;
+	Command undoCommand;
 	
 	public RemoteControl() {
 		onCommands = new Command[7];
 		offCommands = new Command[7];
 		
 		Command noCommand = new NoCommand();
+		undoCommand = noCommand;
 		
 		for (int i = 0; i < 7; i++) {
 			onCommands[i] = noCommand;
 			offCommands[i] = noCommand;
+			
 		}
 	}
 	
@@ -23,10 +26,16 @@ public class RemoteControl {
 	
 	public void onButtonWasPushed(int slot) {
 		onCommands[slot].execute();
+		undoCommand = onCommands[slot];
 	}
 	
 	public void offButtonWasPushed(int slot) {
 		offCommands[slot].execute();
+		undoCommand = offCommands[slot];
+	}
+	
+	public void undoButtonWasPushed(int slot) {
+		undoCommand.undo();
 	}
 	
 	public String toString() {

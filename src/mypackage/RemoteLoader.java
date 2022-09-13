@@ -54,6 +54,8 @@ public class RemoteLoader {
 		
 		remoteControl.onButtonWasPushed(4);
 		remoteControl.offButtonWasPushed(4);
+		
+		remoteControl.undoButtonWasPushed(4);
 	}
 
 }
