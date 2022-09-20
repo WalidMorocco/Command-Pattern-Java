@@ -20,7 +20,7 @@ public class Stereo {
 	}
 	
 	public void setDVD() {
-		System.out.println(room + " stereo is set for DCD input");
+		System.out.println(room + " stereo is set for DVD input");
 	}
 	
 	public void setRadio() {

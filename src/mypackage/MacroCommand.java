@@ -18,6 +18,8 @@ public class MacroCommand {
 		System.out.println("\nNight Mode is On:");
 		light.on();
 		stereo.on();
+		stereo.setDVD();
+		stereo.setVolume(11);
 		garageDoor.down();
 		ceilingFan.high();
 	}

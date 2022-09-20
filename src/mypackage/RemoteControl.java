@@ -40,7 +40,7 @@ public class RemoteControl {
 	
 	public String toString() {
 		StringBuffer stringBuff = new StringBuffer();
-		stringBuff.append("\n-------- Remote Controle --------\n");
+		stringBuff.append("\n-------- Remote Control --------\n");
 		for (int i=0; i < onCommands.length; i++) {
 			stringBuff.append("[slot " + i + "] "
 					+ onCommands[i].getClass().getName()

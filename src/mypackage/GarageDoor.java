@@ -6,7 +6,7 @@ public class GarageDoor {
 	}
 	
 	public void down() {
-		System.out.println("Garage door is close");
+		System.out.println("Garage door is closed");
 	}
 	
 	public void stop() {
