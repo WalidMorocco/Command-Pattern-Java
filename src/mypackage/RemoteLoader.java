@@ -12,6 +12,12 @@ public class RemoteLoader {
 		CeilingFan ceilingFan= new CeilingFan("Living Room");
 		GarageDoor garageDoor= new GarageDoor();
 		Stereo stereo = new Stereo("Living Room");
+		
+		// Create the Macro Command
+		MacroCommand macroCommand = new MacroCommand(livingRoomLight, stereo, garageDoor, ceilingFan);
+		
+		MacroOnCommand macroOnCommand = new MacroOnCommand(macroCommand);
+		MacroOffCommand macroOffCommand = new MacroOffCommand(macroCommand);
 
 		//Create all the light command objects
 		LightOnCommand livingRoomLightOn = new LightOnCommand(livingRoomLight);
@@ -37,25 +43,30 @@ public class RemoteLoader {
 		remoteControl.setCommand(2, ceilingFanOn, ceilingFanOff);
 		remoteControl.setCommand(3, stereoOnWithCD, stereoOff);
 		remoteControl.setCommand(4, garageDoorUp, garageDoorDown);
+		remoteControl.setCommand(5, macroOnCommand, macroOffCommand);
 		
 		System.out.println(remoteControl);
 		
-		remoteControl.onButtonWasPushed(0);
-		remoteControl.offButtonWasPushed(0);
+//		remoteControl.onButtonWasPushed(0);
+//		remoteControl.offButtonWasPushed(0);
+//		
+//		remoteControl.onButtonWasPushed(1);
+//		remoteControl.offButtonWasPushed(1);
+//		
+//		remoteControl.onButtonWasPushed(2);
+//		remoteControl.offButtonWasPushed(2);
+//		
+//		remoteControl.onButtonWasPushed(3);
+//		remoteControl.offButtonWasPushed(3);
+//		
+//		remoteControl.onButtonWasPushed(4);
+//		remoteControl.offButtonWasPushed(4);
+//		
+//		remoteControl.undoButtonWasPushed(4);
 		
-		remoteControl.onButtonWasPushed(1);
-		remoteControl.offButtonWasPushed(1);
 		
-		remoteControl.onButtonWasPushed(2);
-		remoteControl.offButtonWasPushed(2);
-		
-		remoteControl.onButtonWasPushed(3);
-		remoteControl.offButtonWasPushed(3);
-		
-		remoteControl.onButtonWasPushed(4);
-		remoteControl.offButtonWasPushed(4);
-		
-		remoteControl.undoButtonWasPushed(4);
+		remoteControl.onButtonWasPushed(5);
+		remoteControl.offButtonWasPushed(5);
 	}
 
 }
